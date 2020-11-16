@@ -75,7 +75,7 @@
     second();
 
     function last(question){
-        console.log(questions[4]);
+        console.log(questions[questions.length - 1]);
     }
     last();
 
