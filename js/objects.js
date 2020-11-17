@@ -43,11 +43,30 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    //     if(amount > 200){
+    //         console.log(amount - (amount *.12))
+    //         return console.log(name + "'s original total is" + amount + ".")
+    //         return console.log(name + "'s discount will be" +(amount*.12)+". "+name+"'s new total will be"+(amount - (amount*.12))+".")
+    //     } else {
+    //         return console.log(name + "'s original total is" + amount + ". " + name + "does not get a discount.")
+    //     }
+    // }
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+     ];
+
+    shoppers.forEach(function isDiscount(shoppers.name , shoppers.amount)){
+        if(shoppers.amount > 200){
+            console.log(shoppers.amount - (shoppers.amount *.12))
+            return console.log(shoppers.name + "'s original total is" + shoppers.amount + ".")
+            return console.log(shoppers.name + "'s discount will be" +(shoppers.amount*.12)+". "+shoppers.name+"'s new total will be"+(shoppers.amount - (shoppers.amount*.12))+".")
+         } else {
+            return console.log(shoppers.name + "'s original total is" +shoppers.amount+ ". " + shoppers.name + "does not get a discount.")
+    }
+}
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -62,6 +81,43 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: "Cat's Cradle",
+            author: {
+                firstName: "Kurt",
+                lastName: "Vonnegut",
+            }
+        },
+        {
+            title: "The Lord of the Rings",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien",
+            }
+        },
+        {
+            title: "The Return of the King",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien",
+            }
+        },
+        {
+            title: "The Time Machine",
+            author: {
+                firstName: "H.G.",
+                lastName: "Wells",
+            }
+        },
+        {
+            title: "A Dance of Dragons",
+            author: {
+                firstName: "George",
+                lastName: "Martin",
+            }
+        },
+    ];
     /**
      * TODO:
      * Loop through the books array and output the following information about
