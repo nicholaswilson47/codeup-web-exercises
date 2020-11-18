@@ -11,10 +11,13 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    var person = new Object();
-    person.firstName = "Nicholas";
-    person.lastName = "Wilson";
+    var person = {
+        firstName: "Nicholas",
+        lastName: "Wilson"
+    };
 
+    console.log(person.firstName)
+    console.log(person.lastName)
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -25,9 +28,9 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function () {
-        alert("Hello from " + this.firstName + " " +this.lastName +"!");
+        return("Hello from " + this.firstName + " " +this.lastName +"!");
     };
-    console.log(person.sayHello())
+    console.log()
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -57,15 +60,23 @@
         {name: 'George', amount: 320}
      ];
 
-    shoppers.forEach(function isDiscount(shoppers.name , shoppers.amount)){
-        if(shoppers.amount > 200){
-            console.log(shoppers.amount - (shoppers.amount *.12))
-            return console.log(shoppers.name + "'s original total is" + shoppers.amount + ".")
-            return console.log(shoppers.name + "'s discount will be" +(shoppers.amount*.12)+". "+shoppers.name+"'s new total will be"+(shoppers.amount - (shoppers.amount*.12))+".")
-         } else {
-            return console.log(shoppers.name + "'s original total is" +shoppers.amount+ ". " + shoppers.name + "does not get a discount.")
-    }
-}
+    shoppers.forEach(function(shopper){
+      if(shopper.amount >200) {
+          console.log("Hello there, "+ shopper.name + "! Your total before any discount is "+shopper.amount.toFixed(2)+ ".since that's over 200 you get a 12% discount that means your new total is $"+ (shopper.amount*.88).toFixed(2)+".");
+      } else{
+          console.log("hello, " +shopper.name+" .Your total is $" +shopper.amount.toFixed(2))
+      }
+    })
+
+//     shoppers.forEach(function isDiscount(shoppers.name , shoppers.amount)){
+//         if(shoppers.amount > 200){
+//             console.log(shoppers.amount - (shoppers.amount *.12))
+//             return console.log(shoppers.name + "'s original total is" + shoppers.amount + ".")
+//             return console.log(shoppers.name + "'s discount will be" +(shoppers.amount*.12)+". "+shoppers.name+"'s new total will be"+(shoppers.amount - (shoppers.amount*.12))+".")
+//          } else {
+//             return console.log(shoppers.name + "'s original total is" +shoppers.amount+ ". " + shoppers.name + "does not get a discount.")
+//     }
+// }
 
 
     /** TODO:
@@ -118,6 +129,7 @@
             }
         },
     ];
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -142,6 +154,15 @@
      *      ---
      *      ...
      */
+
+    function showBookInfo(book){
+        var str = "Title: " + book.title+ "\n";
+        str += "Author: " +book.author.firstName + " "+book.author.lastName;
+        return str;
+    }
+    books.forEach(function(book,index){
+        console.log("Book #" + (index+1) + "\n" +showBookInfo(book));
+    })
 
     /**
      * Bonus:
