@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Forms</title>
+    </header>
+    <body>
+    <center>
+        <h1>Register With Us!</h1>
+            <form method="POST" action="https://request-inspector.glitch.me/">
+                <label for="email"><strong>Email:</strong></label>
+                <br>
+                <input id="email" type="text" name="email" placeholder="Enter your email address">
+                <br><br>
+                <label for="password"><strong>Password:</strong></label>
+                <br>
+                <input id="password" type="password" name="password" placeholder="Password">
+                <br><br>
+                <label for="bio"><strong>Tell us about yourself:</strong></label>
+                <br>
+                <textarea id="bio" name="bio" cols="32" rows="6"></textarea>
+                <br><br>
+                <label for="how"><strong>How did you hear about us?</strong></label>
+                <br>
+                Billboard<input id ="how" type="radio" name="question_4" value="billboard">
+                <br>
+                Radio Advertisement<input id ="how" type="radio" name="question_4" value="Radio">
+                <br>
+                Internet Advertisement<input id ="how" type="radio" name="question_4" value="internet">
+                <br>
+                Other<input id ="how" type="radio" name="question_4" value="other">
+                <input id="other" type="text">
+                <br>
+                <br>
+                <label for="browser"><strong>Which browser are you using?</strong></label>
+                <br>
+                <select id="browser" name="browser_pref">
+                    <option value="chrome">Chrome</option>
+                    <option value="ie">Internet Explorer</option>
+                    <option value="safari">Safari</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit">
+            </form>
+    </center>
+    </body>
+</html>
