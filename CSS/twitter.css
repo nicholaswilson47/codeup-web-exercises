@@ -70,21 +70,30 @@ a {
     width: 100%;
     float: left;
     padding: .5em;
-    border: 1px;
+    border-bottom: 1px solid lightgrey;
+    overflow: auto;
+    background-color: var(--light-bg);
 }
 .media-body{
-    width: 100%;
+    width: calc(100% - 50px);
+    float: left;
 }
 .media-image{
     max-width: 50px;
     margin-top: 1.33em;
+    float: left;
 }
 .timeline{
-    clear: left;
-    width: 50%;
+    float: left;
+    width: calc(50% - 1em);
+    background-color: white;
+    margin: .5em .5em;
 }
 .who-to-follow{
     width: 25%;
+    float: left;
+    background-color: white;
+    margin-top: .5em;
 }
 .profile-details{
     width: 25%;
@@ -92,6 +101,7 @@ a {
     margin-top: 50px;
 }
 .profile-entry{
+    list-style-type: none;
     margin: .5em;
 }
 .btn {
