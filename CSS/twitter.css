@@ -22,7 +22,6 @@ header {
     background-size: cover;
     min-height: 300px;
     padding-top: 275px;
-
 }
 a {
     color: var(--link-color);
@@ -31,6 +30,7 @@ a {
     background: var(--light-bg);
     width: 100%;
     position: fixed;
+    z-index: 1000;
 }
 .nav {
     list-style-type: none;
@@ -67,19 +67,32 @@ a {
     float: left;
 }
 .media{
-    width: 100%
+    width: 100%;
     float: left;
     padding: .5em;
     border: 1px;
 }
 .media-body{
-    float: left;
     width: 100%;
 }
 .media-image{
     max-width: 50px;
     margin-top: 1.33em;
-    float: left;
+}
+.timeline{
+    clear: left;
+    width: 50%;
+}
+.who-to-follow{
+    width: 25%;
+}
+.profile-details{
+    width: 25%;
+    padding: 0px;
+    margin-top: 50px;
+}
+.profile-entry{
+    margin: .5em;
 }
 .btn {
     border: 1px solid var(--main-link-color);
