@@ -33,7 +33,9 @@ h2, h3 {
     background: white;
     padding: 1em;
     margin: 0 auto;
-
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     /* enter needed declarations here */
 }
 
@@ -41,6 +43,7 @@ section {
     /* enter needed declarations here */
     display: flex;
     justify-content: space-between;
+    /*margin: 1em 0em 1em 0em;*/
 }
 
 section:nth-of-type(1) {
@@ -53,6 +56,7 @@ section:nth-of-type(1) {
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    display: flex;
     align-self: self-start;
 }
 
@@ -60,16 +64,17 @@ section:nth-of-type(1) div:last-child {
     background: fuchsia;
     width: 3em;
     height: 1em;
-    margin: 1em 0em 1em 0em;
+
 }
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    flex-grow: 3;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
-
+    flex-grow: 2;
 }
 
 .blue-box {
@@ -85,7 +90,6 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-    margin-top: 1em;
 
 }
 
@@ -118,7 +122,7 @@ section:nth-of-type(5) {
     background: yellow;
     width: 2em;
     height: 2em;
-    margin: 1em 0em 1em 0em;
+
 }
 
 section:nth-of-type(6) {
