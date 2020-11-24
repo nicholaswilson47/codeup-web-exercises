@@ -52,8 +52,10 @@ div.single-box {
 /********************* CONTAINER 2 *******************/
 /* Now some rules for the second set of boxes */
 #box-container-2 {
+    display: flex;
     /* TODO: Declare the display to be flex */
     width: 100%;
+    flex-wrap: wrap;
     /* TODO: Set up flex properties for this container */
     margin-bottom: 30px;
 }
