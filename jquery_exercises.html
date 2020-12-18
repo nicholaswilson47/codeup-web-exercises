@@ -28,9 +28,21 @@
     $('li').css('font-size','20px');
     $('h1, p, li').css('background','yellow');
     $('h2').css('color','blue');
-    $('li').css('color','red');
     alert($('h1').html())
-
+    $( 'h1' ).click(function() {
+        $( "h1" ).css('background', 'blue');
+    });
+    $('p').dblclick(function(e) {
+        $(this).css('font-size','18px');
+    });
+    $('li').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', 'black');
+        }
+    );
 
 </script>
 </body>
