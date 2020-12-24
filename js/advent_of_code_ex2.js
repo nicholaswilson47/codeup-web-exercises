@@ -227,6 +227,65 @@ passwords =
     "7-10 d: qxqbdtddgdvzmdmrp","16-18 b: bbbbbblbbbbbbbbvbs","1-5 c: cwbbccccccb","4-11 z: zrxzszzlzvzzzmdkt",
     "17-19 b: bppptxztffxxqnlpbbb","3-9 n: nnnlncrnnnnn"]
 
-function passwordFinder(x-y z:'string'){
+let fs = require("fs");
 
+var entryList = fs.readFileSync("input.txt", "utf8").split("\n");
+
+function checkCharacter(str, chr, min, max) {
+    let count = 0;
+    for (let c of str) {
+        if (c == chr) {
+            count++;
+        }
+    }
+    return !(count < min || count > max);
 }
+
+let validPasswords = 0;
+
+for (let entry of entryList) {
+    let patterns = entry.split(": ");
+    let validatorPattern = patterns[0].split(" ");
+    let minMax = validatorPattern[0].split("-");
+
+    if (
+        checkCharacter(
+            patterns[1],
+            validatorPattern[1],
+            parseInt(minMax[0]),
+            parseInt(minMax[1])
+        )
+    ) {
+        validPasswords++;
+    }
+}
+console.log("Part one");
+console.log("Valid passwords: ", validPasswords);
+
+function isValidPassword(str, chr, validPos, invalidPos) {
+    return (
+        (str.charAt(validPos) === chr || str.charAt(invalidPos) === chr) &&
+        str.charAt(validPos) != str.charAt(invalidPos)
+    );
+}
+
+validPasswords = 0;
+
+for (let entry of entryList) {
+    let patterns = entry.split(": ");
+    let validatorPattern = patterns[0].split(" ");
+    let validInvalid = validatorPattern[0].split("-");
+
+    if (
+        isValidPassword(
+            patterns[1],
+            validatorPattern[1],
+            parseInt(validInvalid[0]) - 1,
+            parseInt(validInvalid[1]) - 1
+        )
+    ) {
+        validPasswords++;
+    }
+}
+console.log("Part two");
+console.log("Valid passwords: ", validPasswords);
