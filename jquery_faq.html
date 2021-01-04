@@ -10,12 +10,36 @@
         .yellow {
             background-color: yellow;
         }
+        h1 {
+           background-color: red;
+        }
+        body{
+            margin: 60px;
+        }
+        dl>dd,dt{
+            margin: 10px;
+        }
+        dd>ul{
+            margin: 10px;
+        }
+        #threeParks{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .blue{
+            color: blue;
+        }
     </style>
 </head>
 <body>
 <div>
-<p>FAQs about National Parks:</p>
-    <div id="button">
+<h1><p>FAQs about National Parks:</p></h1>
+    <div>
         <button id="btn1" type="button" data-id="1" class="btn btn-default">Show All</button>
     </div>
     <div>
@@ -62,6 +86,33 @@
             <dd><a href="https://www.nps.gov/aboutus/visitation-numbers.htm">View a list of the most-visited sites in the National Park Service.</a></dd>
         </dl>
     </div>
+    <div id="threeParks">
+        <div class="park">
+            <h3>Park 1</h3>
+            <ul>
+                <li>Fact 1</li>
+                <li>Fact 2</li>
+                <li>Fact 3</li>
+            </ul>
+        </div>
+        <div class="park">
+            <h3>Park 2</h3>
+            <ul>
+                <li>Fact 1</li>
+                <li>Fact 2</li>
+                <li>Fact 3</li>
+            </ul>
+        </div>
+        <div class="park">
+            <h3>Park 3</h3>
+            <ul>
+                <li>Fact 1</li>
+                <li>Fact 2</li>
+                <li>Fact 3</li>
+            </ul>
+        </div>
+    </div>
+    <button id="btn2" type="button" data-id="2" class="btn btn-default">Highlight</button>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -81,7 +132,20 @@
         $("#btn1").click(function () {
             $("dd").toggleClass("invisible");
         });
+
+        $("#btn2").click(function () {
+            $(".park>ul").each(function (){
+                $(this).children().last().toggleClass("yellow");
+                })
         });
+        $("h3").click(function () {
+            $(this).next().children("li").toggleClass("bold");
+        });
+        $("li").click(function(){
+            $(this).parent().children().first().toggleClass("blue");
+        });
+
+             });
 </script>
 </body>
 </html>
