@@ -5,7 +5,11 @@
     <title>Weathermap API</title>
 
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-
+<!--  Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--  MapBox  -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
 
 
 </head>
@@ -13,11 +17,16 @@
 <h1>Weathermap API</h1>
 
 
+<!--This Div contains the weather info-->
+<div id="current weather">
 
+</div>
 
 
 <!--The Div that contains the map-->
-<div id='map'></div>
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+
 
 <!--Scripts for WeatherMap HTML-->
 <script src="js/jquery-2.2.4.js"></script>
@@ -25,6 +34,10 @@
 <script src="js/keys.js"></script>
 <!--MapBox JS Library-->
 
+<!--Bootstrap-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--SRC for MY javascript-->
 <script src="js/weathermap-api.js"></script>
+
 </body>
 </html>
