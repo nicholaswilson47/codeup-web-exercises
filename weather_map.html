@@ -12,9 +12,9 @@
 
 
 <!-- As a heading -->
-<nav class="navbar navbar-light bg-primary text-white">
+<nav class="navbar navbar-light">
     <h2 class=" mb-0">Weather App</h2>
-    <span id="city-name" class="navbar-text text-white font-weight-bold"></span>
+    <span id="city-name" class="navbar-text font-weight-bold"></span>
 </nav>
 
 
@@ -64,9 +64,9 @@
         mapboxgl.accessToken = mapboxToken;
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
+            style: 'mapbox://styles/mapbox/dark-v10',
+            center: saCoords,
             zoom: 10,
-            center: saCoords
         });
 
         function onDragEnd() {
@@ -81,6 +81,19 @@
         marker.on('dragend', onDragEnd);
 
 
+        function geocode(search) {
+            var baseUrl = 'https://api.mapbox.com';
+            var endPoint = '/geocoding/v5/mapbox.places/';
+            return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + mapboxgl.accessToken)
+                .then(function(res) {
+                    return res.json();
+                }).then(function(data) {
+                    console.log(data);
+                    buildCoordsObj(data.features[0].center[1], data.features[0].center[0]);
+                });
+        }
+
+    });
 </script>
 </body>
 </html>

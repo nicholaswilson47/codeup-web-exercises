@@ -23,16 +23,28 @@ body {
     font-family: Tomorrow, sans-serif;
 }
 h2 {
-    background-color: #fcee09;
+
     font-family: Tomorrow, sans-serif;
 }
 .m-3{
     font-family: Tomorrow, sans-serif;
     color: #fcee09;
 }
-
 .card{
-
+    border-color: #00f0ff;
+}
+.card-header{
+    background-color: #ff003c;
+}
+.card-body{
+    background-color: #fcee09;
+}
+.list-group-item{
+    background-color: #fcee09;
+}
+.navbar{
+    background-color: #fcee09;
+    color: #050a0e;
 }
 
 :root {
