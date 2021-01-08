@@ -22,7 +22,7 @@
 
     <form class="form-inline m-3">
         <div class="form-group m-3">
-            <label for="place-text" class="m-3">Place</label>
+            <label for="place-text" id="placeHolder"class="m-3">Place</label>
             <input type="text" id="place-text" class="form-control" placeholder="Las Cruces" value="Las Cruces">
         </div>
         <div class="form-group m-3">
@@ -100,7 +100,7 @@
                             "<div class=\"card-header text-center\">"+ el.dt_txt.slice(0, 10) +"</div>\n" +
                             "<div class=\"card-body\">\n" +
                             "<h6 class=\"card-text text-center\">"+ el.main.temp + "°F / " + el.main.temp_max+"°F</h6>\n" +
-                            "<img class='icon' src=\"http://openweathermap.org/img/w/"+ el.weather[0].icon + ".png\">" +
+                            "<img class='icon' src=\"img/"+ el.weather[0].icon + ".png\">" +
                             "<ul class=\"list-group list-group-flush\">"+
                             "<li class=\"list-group-item\">Description: <strong>"+ el.weather[0].description +"</strong></li>\n" +
                             "<li class=\"list-group-item\">Humidity: <strong>"+ el.main.humidity +"</strong></li>\n" +

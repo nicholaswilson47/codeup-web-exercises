@@ -4,26 +4,31 @@
     margin: 10px 10px;
     background-color: #3bb1ed;
 }
+#placeHolder{
+    color: #00f0ff;
+}
+#city-name{
+    color: #050a0e;
+}
 #map {
     width: 75%;
     height: 100vh;
     margin: auto;
     margin-bottom: 20px;
-    background-color: #ff003c;
+    background-color: #050a0e;
     font-family: Tomorrow, sans-serif;
 }
 .icon {
     display: block;
     margin: 0 auto;
     font-family: Tomorrow, sans-serif;
-
+    width: 50px;
 }
 body {
     background-color: #050a0e;
     font-family: Tomorrow, sans-serif;
 }
 h2 {
-
     font-family: Tomorrow, sans-serif;
 }
 .m-3{
@@ -32,6 +37,7 @@ h2 {
 }
 .card{
     border-color: #00f0ff;
+    margin-bottom: 20px;
 }
 .card-header{
     background-color: #fcee09;
