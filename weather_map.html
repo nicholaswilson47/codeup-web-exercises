@@ -2,42 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weathermap API</title>
-
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-<!--  Bootstrap CSS  -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--  MapBox  -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
-
-
+    <title>Weather Map API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
-<h1>Weathermap API</h1>
 
 
-<!--This Div contains the weather info-->
-<div id="current weather">
-
-</div>
+<!-- As a heading -->
 
 
-<!--The Div that contains the map-->
-<div id='map' style='width: 400px; height: 300px;'></div>
+    <div class="row">
+        <div class="col">
+            <div id="map"></div>
+        </div>
+    </div>
 
+    <div id="weather-cards" class="card-deck"></div>
 
+</main>
 
-<!--Scripts for WeatherMap HTML-->
-<script src="js/jquery-2.2.4.js"></script>
-<!--API Keys for OpenWeather-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
-<!--MapBox JS Library-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+<script>
 
-<!--Bootstrap-->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!--SRC for MY javascript-->
-<script src="js/weathermap-api.js"></script>
+        // Map
+        mapboxgl.accessToken = mapboxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: saCoords
+        });
 
+        function onDragEnd() {
+            var coordinates = marker.getLngLat();
+            getForecast(coordinates);
+        }
+
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        }).setLngLat(saCoords).addTo(map);
+
+        marker.on('dragend', onDragEnd);
+
+</script>
 </body>
 </html>
