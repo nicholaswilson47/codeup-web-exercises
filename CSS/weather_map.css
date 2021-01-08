@@ -5,17 +5,34 @@
     background-color: #3bb1ed;
 }
 #map {
-    width: 100%;
-    height: 50vh;
-    margin: 20px 0;
-    background-color: #00f0ff;
+    width: 75%;
+    height: 100vh;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #ff003c;
+    font-family: Tomorrow, sans-serif;
 }
 .icon {
     display: block;
     margin: 0 auto;
+    font-family: Tomorrow, sans-serif;
+
 }
 body {
-    bac
+    background-color: #050a0e;
+    font-family: Tomorrow, sans-serif;
+}
+h2 {
+    background-color: #fcee09;
+    font-family: Tomorrow, sans-serif;
+}
+.m-3{
+    font-family: Tomorrow, sans-serif;
+    color: #fcee09;
+}
+
+.card{
+
 }
 
 :root {
