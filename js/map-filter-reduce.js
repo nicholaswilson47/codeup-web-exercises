@@ -49,5 +49,5 @@ console.log(yearsExp + " total experience, average " + (yearsExp/users.length) +
 let longestEmail = users.reduce((currentLongest, user) => user.email.length > currentLongest.email.length ? user : currentLongest);
 console.log(longestEmailUser.name + "has the longest email address, with " + longestEmailUser.email);
 
-
-let userNames = user.reduce((listOfNames, user) => , "Your instructors are: ")
+// TO DO: Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+// let userNames = user.reduce((listOfNames, user) => , "Your instructors are: ")
